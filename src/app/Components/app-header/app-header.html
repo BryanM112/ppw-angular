@@ -1,0 +1,16 @@
+<header class="header">
+    <h1>
+        {{brand()}}
+    </h1>
+
+        <button (click)="changeBrand()">Modificar Título</button>
+        <button (click)="resetBrand()" [disabled]="brand() === 'PPW ANGULAR'">Resetear Título</button>
+        <button (click)="toggleInfo()">
+            {{toggleLabel()}}
+        </button>
+
+
+    @if(showInfo()){
+        <h3>Show info es TRUE por eso muestra </h3>
+    }
+</header>
