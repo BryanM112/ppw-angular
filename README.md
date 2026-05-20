@@ -16,3 +16,17 @@ Columnas invertidas: Es similar al anterior, en este caso, cuando ingresemos car
 ![subgrid](assets/04-subgrid.png)
 Subgrid: En este caso usamos una cuadrícula, usando grid. Pero implementamos un subgrid que ocupa 4 filas. Usamos grid-rows-subgrid, que, Usa las mismas filas del grid padre. 
 
+# 05-formularios-reactivos-practica-a
+
+![Todos los Errores](assets/05-formularios-reactivos-practica-a.png)
+Captura del formulario donde se muestran todos los errores
+
+![Validación asíncrona](assets/05-formularios-reactivos-practica-a1.png)
+Captura del input email con el error de la validación asíncrona
+
+# 05-formularios-reactivos-practica-b
+![Formulario vacío](assets/05-formularios-reactivos-practica-b.png)
+Captura del formulario vacío mostrando el estado inicial.
+
+![Todos los errores visibles](assets/05-formularios-reactivos-practica-b1.png)
+Captura del formulario con todos los errores visibles
