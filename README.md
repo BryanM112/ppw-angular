@@ -30,3 +30,17 @@ Captura del formulario vacío mostrando el estado inicial.
 
 ![Todos los errores visibles](assets/05-formularios-reactivos-practica-b1.png)
 Captura del formulario con todos los errores visibles
+
+# 05-formularios-reactivos-practica-c
+
+![Formulario vacío](assets/05-formularios-reactivos-practica-c.png)
+Captura de formularío vacío
+
+![errores de validación](assets/05-formularios-reactivos-practica-c1.png)
+Captura donde se muestra todos los errores de validación
+
+![Formulario válido](assets/05-formularios-reactivos-practica-c2.png)
+Captura del formulario válido y datos completos
+
+![Consola](assets/05-formularios-reactivos-practica-c3.png)
+Captura de la consola con el objeto myForm.value submit
