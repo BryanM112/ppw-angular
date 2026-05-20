@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+:root{
+    font-family: Inter, sistem-ui, sans-serif;
+    color: #172023;
+    background: #f5f7fb;
+}
+
+body{
+    margin: 0;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-100 text-slate-900 antialiased;
+  }
+}   
+
+@theme {
+  --color-brand: #0f4c81;
+  --color-brand-strong: #0b3a66;
+  --breakpoint-xs: 30rem;
+  --breakpoint-3xl: 120rem;
+}
+

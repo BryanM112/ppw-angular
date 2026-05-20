@@ -1,0 +1,494 @@
+<!--
+  space-y-10: ritmo vertical generoso (2.5rem) entre secciones.
+-->
+<section class="space-y-10">
+
+  <!-- Encabezado de la página -->
+  <header class="space-y-3">
+    <!--
+      text-sm        → font-size: 0.875rem
+      font-semibold  → font-weight: 600
+      uppercase      → text-transform: uppercase
+      tracking-[0.3em] → letter-spacing arbitrario (0.3em)
+      text-sky-700   → azul intenso para etiqueta de categoría
+    -->
+    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">Layouts</p>
+
+    <!--
+      md:text-4xl: escala tipográfica en pantallas medianas (≥768px).
+    -->
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+      Distribuciones de layout con Tailwind
+    </h1>
+
+    <!--
+      max-w-2xl: limita el ancho del párrafo para mejor legibilidad.
+      leading-7: line-height: 1.75rem.
+    -->
+    <p class="max-w-2xl leading-7 text-slate-600">
+      Cada sección muestra una distribución diferente: grid de columnas, grid con sidebar,
+      y distribuciones flex. Los cards ilustran cómo cambia la composición y aplican
+      efectos distintos en cada caso.
+    </p>
+  </header>
+
+  <!-- Las secciones de grid y flex se agregan aquí -->
+   <!--
+  rounded-3xl border border-slate-200 bg-white p-6 shadow-sm:
+  contenedor de sección con fondo blanco, borde sutil y sombra ligera.
+-->
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+  <h2 class="mb-1 text-xl font-semibold text-slate-900">Grid de 4 columnas</h2>
+  <p class="mb-5 text-sm text-slate-500">1 col en móvil → 2 en sm → 4 en lg. Cards con gradiente y sombra.</p>
+
+  <!--
+    grid      → activa CSS Grid
+    gap-4     → espacio de 1rem entre celdas
+    sm:grid-cols-2  → 2 columnas en pantallas ≥ 640px
+    lg:grid-cols-4  → 4 columnas en pantallas ≥ 1024px
+  -->
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+    <!--
+      bg-linear-to-br  → gradiente diagonal (arriba-izquierda → abajo-derecha)
+      from-sky-400 to-blue-600 → de celeste a azul
+      shadow-lg  → sombra grande con mayor difuminado
+      text-white → texto blanco sobre el gradiente oscuro
+      p-5        → padding interno de 1.25rem
+      rounded-2xl → border-radius: 1rem
+    -->
+    <article class="rounded-2xl bg-linear-to-br from-sky-400 to-blue-600 p-5 shadow-lg text-white">
+      <!--
+        opacity-80: opacidad del 80% sobre el texto de etiqueta.
+      -->
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Card 01</p>
+      <h3 class="mt-2 text-lg font-semibold">Usuarios activos</h3>
+      <p class="mt-2 text-sm leading-6 opacity-90">Indicador rápido de actividad.</p>
+    </article>
+
+    <!-- from-violet-500 to-purple-700: gradiente de violeta a morado -->
+    <article class="rounded-2xl bg-linear-to-br from-violet-500 to-purple-700 p-5 shadow-lg text-white">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Card 02</p>
+      <h3 class="mt-2 text-lg font-semibold">Tareas pendientes</h3>
+      <p class="mt-2 text-sm leading-6 opacity-90">Resumen visual de trabajo.</p>
+    </article>
+
+    <!-- from-emerald-400 to-teal-600: gradiente verde esmeralda a teal -->
+    <article class="rounded-2xl bg-linear-to-br from-emerald-400 to-teal-600 p-5 shadow-lg text-white">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Card 03</p>
+      <h3 class="mt-2 text-lg font-semibold">Ingresos</h3>
+      <p class="mt-2 text-sm leading-6 opacity-90">Métrica financiera con lectura inmediata.</p>
+    </article>
+
+    <!-- from-rose-400 to-pink-600: gradiente rosado -->
+    <article class="rounded-2xl bg-linear-to-br from-rose-400 to-pink-600 p-5 shadow-lg text-white">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Card 04</p>
+      <h3 class="mt-2 text-lg font-semibold">Satisfacción</h3>
+      <p class="mt-2 text-sm leading-6 opacity-90">Seguimiento de experiencia.</p>
+    </article>
+
+  </div>
+</article>
+
+
+
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+  <h2 class="mb-1 text-xl font-semibold text-slate-900">Grid con sidebar</h2>
+  <p class="mb-5 text-sm text-slate-500">Columna fija de 240px + área principal flexible. Solo sombra, sin gradiente.</p>
+
+  <!--
+    lg:grid-cols-[240px_minmax(0,1fr)]:
+    Valor arbitrario para grid-template-columns.
+    240px: columna fija para el sidebar.
+    minmax(0,1fr): columna flexible que ocupa el resto disponible.
+  -->
+  <div class="grid gap-4 lg:grid-cols-[240px_minmax(0,1fr)]">
+
+    <!--
+      shadow-md  → sombra mediana (menor que shadow-lg)
+      bg-slate-50 → fondo gris muy claro
+    -->
+    <aside class="rounded-2xl bg-slate-50 border border-slate-200 p-5 shadow-md">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] text-sky-700">Sidebar</p>
+      <h3 class="mt-2 text-lg font-semibold text-slate-900">Menú principal</h3>
+      <p class="mt-2 text-sm leading-6 text-slate-600">Agrupa accesos a secciones internas sin competir con el contenido.</p>
+    </aside>
+
+    <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5 shadow-md">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] text-sky-700">Contenido</p>
+      <h3 class="mt-2 text-lg font-semibold text-slate-900">Panel central</h3>
+      <p class="mt-2 text-sm leading-6 text-slate-600">Ocupa el espacio disponible con títulos, métricas y acciones prioritarias.</p>
+    </div>
+
+  </div>
+</article>
+
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+  <h2 class="mb-1 text-xl font-semibold text-slate-900">Grid de 3 columnas</h2>
+  <p class="mb-5 text-sm text-slate-500">Distribución simétrica. Cards con solo gradiente, sin sombra.</p>
+
+  <!--
+    md:grid-cols-3 → 3 columnas en pantallas ≥ 768px
+    gap-6          → espacio mayor entre celdas (1.5rem)
+  -->
+  <div class="grid gap-6 md:grid-cols-3">
+
+    <!--
+      bg-linear-to-tr: gradiente de abajo-izquierda a arriba-derecha.
+      from-amber-400 to-orange-500: gradiente cálido amarillo-naranja.
+      Sin shadow: se omite la sombra para diferenciarse de los ejemplos anteriores.
+    -->
+    <article class="rounded-2xl bg-linear-to-tr from-amber-400 to-orange-500 p-5 text-white">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Sección A</p>
+      <h3 class="mt-2 text-lg font-semibold">Primero</h3>
+      <p class="mt-2 text-sm leading-6 opacity-90">Contenido de la primera columna.</p>
+    </article>
+
+    <article class="rounded-2xl bg-linear-to-tr from-cyan-400 to-sky-600 p-5 text-white">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Sección B</p>
+      <h3 class="mt-2 text-lg font-semibold">Segundo</h3>
+      <p class="mt-2 text-sm leading-6 opacity-90">Contenido de la segunda columna.</p>
+    </article>
+
+    <article class="rounded-2xl bg-linear-to-tr from-fuchsia-400 to-pink-600 p-5 text-white">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Sección C</p>
+      <h3 class="mt-2 text-lg font-semibold">Tercero</h3>
+      <p class="mt-2 text-sm leading-6 opacity-90">Contenido de la tercera columna.</p>
+    </article>
+
+  </div>
+</article>
+
+
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+  <h2 class="mb-1 text-xl font-semibold text-slate-900">Flex: carrusel horizontal</h2>
+  <p class="mb-5 text-sm text-slate-500">Los cards se desplazan lateralmente en pantallas pequeñas. Sombra y gradiente.</p>
+
+  <!--
+    flex            → activa Flexbox (fila por defecto)
+    gap-4           → espacio entre cards
+    overflow-x-auto → scroll horizontal cuando el contenido excede el ancho
+    pb-2            → padding inferior para que la scrollbar no tape el contenido
+  -->
+  <div class="flex gap-4 overflow-x-auto pb-2">
+
+    <!--
+      min-w-[16rem] → ancho mínimo fijo (valor arbitrario) para que el card no se comprima
+      shrink-0      → impide que el card se encoja dentro del flex container
+    -->
+    <article class="min-w-[16rem] shrink-0 rounded-2xl bg-linear-to-br from-sky-400 to-blue-600 p-5 shadow-md text-white">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Flex A</p>
+      <h3 class="mt-2 text-lg font-semibold">Primer elemento</h3>
+      <p class="mt-2 text-sm leading-6 opacity-90">Se desplaza sin romper el layout.</p>
+    </article>
+
+    <article class="min-w-[16rem] shrink-0 rounded-2xl bg-linear-to-br from-violet-500 to-purple-700 p-5 shadow-md text-white">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Flex B</p>
+      <h3 class="mt-2 text-lg font-semibold">Segundo elemento</h3>
+      <p class="mt-2 text-sm leading-6 opacity-90">Estable y usable en móviles.</p>
+    </article>
+
+    <article class="min-w-[16rem] shrink-0 rounded-2xl bg-linear-to-br from-emerald-400 to-teal-600 p-5 shadow-md text-white">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Flex C</p>
+      <h3 class="mt-2 text-lg font-semibold">Tercer elemento</h3>
+      <p class="mt-2 text-sm leading-6 opacity-90">Jerarquía visual consistente.</p>
+    </article>
+
+    <article class="min-w-[16rem] shrink-0 rounded-2xl bg-linear-to-br from-rose-400 to-pink-600 p-5 shadow-md text-white">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">Flex D</p>
+      <h3 class="mt-2 text-lg font-semibold">Cuarto elemento</h3>
+      <p class="mt-2 text-sm leading-6 opacity-90">Se agrega sin cambiar el layout.</p>
+    </article>
+
+  </div>
+</article>
+
+
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+  <h2 class="mb-1 text-xl font-semibold text-slate-900">Flex: wrap con alineación</h2>
+  <p class="mb-5 text-sm text-slate-500">Los cards saltan de fila automáticamente. Solo sombra, sin gradiente.</p>
+
+  <!--
+    flex-wrap   → los items pasan a la siguiente línea cuando no caben
+    items-start → alinea los cards al inicio del eje cruzado (no se estiran en altura)
+  -->
+  <div class="flex flex-wrap gap-4 items-start">
+
+    <!--
+      w-56       → ancho fijo de 14rem (224px) — define cuántos cards caben por fila
+      shadow-xl  → sombra extra grande, la más prominente de las predefinidas
+      ring-1 ring-slate-200 → borde sutil alternativo a border
+    -->
+    <article class="w-56 rounded-2xl bg-white p-5 shadow-xl ring-1 ring-slate-200">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] text-sky-700">Item 01</p>
+      <h3 class="mt-2 text-lg font-semibold text-slate-900">Card básica</h3>
+      <p class="mt-2 text-sm leading-6 text-slate-600">Sombra prominente, sin gradiente.</p>
+    </article>
+
+    <article class="w-56 rounded-2xl bg-white p-5 shadow-xl ring-1 ring-slate-200">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] text-sky-700">Item 02</p>
+      <h3 class="mt-2 text-lg font-semibold text-slate-900">Card básica</h3>
+      <p class="mt-2 text-sm leading-6 text-slate-600">Se reorganiza con el ancho disponible.</p>
+    </article>
+
+    <article class="w-56 rounded-2xl bg-white p-5 shadow-xl ring-1 ring-slate-200">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] text-sky-700">Item 03</p>
+      <h3 class="mt-2 text-lg font-semibold text-slate-900">Card básica</h3>
+      <p class="mt-2 text-sm leading-6 text-slate-600">Jerarquía clara con solo sombra.</p>
+    </article>
+
+    <article class="w-56 rounded-2xl bg-white p-5 shadow-xl ring-1 ring-slate-200">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] text-sky-700">Item 04</p>
+      <h3 class="mt-2 text-lg font-semibold text-slate-900">Card básica</h3>
+      <p class="mt-2 text-sm leading-6 text-slate-600">Estructura mínima sin decoración extra.</p>
+    </article>
+
+    <article class="w-56 rounded-2xl bg-white p-5 shadow-xl ring-1 ring-slate-200">
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] text-sky-700">Item 05</p>
+      <h3 class="mt-2 text-lg font-semibold text-slate-900">Card básica</h3>
+      <p class="mt-2 text-sm leading-6 text-slate-600">El ancho fijo define cuántos caben por fila.</p>
+    </article>
+
+  </div>
+</article>
+
+
+
+<!--
+Se creará una cuadrícula de cards. De arriba hacia abajo
+-->
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+  <h2 class="mb-1 text-xl font-semibold text-slate-900">Cuadrículas: Con gradiente y sombra</h2>
+  <p class="mb-5 text-sm text-slate-500">Cuadrículas con n filas de igual tamaño</p>
+
+  <!--
+  grid: activa el sistema CSS grid
+  grid-flow-col: Define de que forma se acomodan los elementos. Lo que hace este apartado
+  es llenarlo de arriba hacia abajo. Después de llegar al límite, crea otra columna al lado derecho
+  grid-rows-3: Crea 3 filas
+  gap-4: Es la separación entre filas y columnas
+
+  Todo esto creará una cuadrícula 3x3
+  -->
+
+  <div class="grid grid-flow-col grid-rows-3 gap-4">
+
+  <article class="rounded-2xl  bg-linear-to-br from-yellow-200 to-yellow-500 p-5 shadow-sm text-gray-500">
+    <h2 class="text-xl font-bold uppercase tracking-[0.50em] backdrop-opacity-60">Card 1x1</h2>
+    <p class="text-xs font-semibold backdrop-opacity-60">Fila 1. Columna 1</p>
+    
+  </article>
+
+  <article class="rounded-2xl  bg-linear-to-br from-yellow-200 to-yellow-500 p-5 shadow-sm text-gray-500">
+    <h2 class="text-xl font-bold uppercase tracking-[0.50em] backdrop-opacity-60">Card 2x1</h2>
+    <p class="text-xs font-semibold backdrop-opacity-60">Fila 2. Columna 1</p>
+  </article>
+
+  <article class="rounded-2xl  bg-linear-to-br from-yellow-200 to-yellow-500 p-5 shadow-sm text-gray-500">
+    <h2 class="text-xl font-bold uppercase tracking-[0.50em] backdrop-opacity-60">Card 3x1</h2>
+    <p class="text-xs font-semibold backdrop-opacity-60">Fila 3. Columna 1</p>
+  </article>
+
+  <article class="rounded-3xl bg-linear-to-br from-sky-200 to-blue-700 p-5 shadow-md text-gray-700">
+        <h2 class="text-xl font-bold uppercase tracking-[0.50em] backdrop-opacity-60">Card 1x2</h2>
+    <p class="text-xs font-semibold backdrop-opacity-60">Fila 1. Columna 2</p>
+  </article>
+
+  <article class="rounded-3xl bg-linear-to-br from-sky-200 to-blue-700 p-5 shadow-md text-gray-700">
+        <h2 class="text-xl font-bold uppercase tracking-[0.50em] backdrop-opacity-60">Card 2x2</h2>
+    <p class="text-xs font-semibold backdrop-opacity-60">Fila 2. Columna 2</p>
+  </article>
+
+  <article class="rounded-3xl bg-linear-to-br from-sky-200 to-blue-700 p-5 shadow-md text-gray-700">
+        <h2 class="text-xl font-bold uppercase tracking-[0.50em] backdrop-opacity-60">Card 3x2</h2>
+    <p class="text-xs font-semibold backdrop-opacity-60">Fila 3. Columna 2</p>
+  </article>
+
+  <article class="rounded-4xl bg-linear-to-br from-red-300 to-red-700 p-5 shadow-xl text-gray-200">
+    <h2 class="text-xl font-bold uppercase tracking-[0.50em] backdrop-opacity-60">Card 1x3</h2>
+    <p class="text-xs font-semibold backdrop-opacity-60">Fila 1. Columna 3</p>
+  </article>
+
+  <article class="rounded-4xl bg-linear-to-br from-red-300 to-red-700 p-5 shadow-xl text-gray-200">
+    <h2 class="text-xl font-bold uppercase tracking-[0.50em] backdrop-opacity-60">Card 2x3</h2>
+    <p class="text-xs font-semibold backdrop-opacity-60">Fila 2. Columna 3</p>
+  </article>
+
+  <article class="rounded-4xl bg-linear-to-br from-red-300 to-red-700 p-5 shadow-xl text-gray-200">
+    <h2 class="text-xl font-bold uppercase tracking-[0.50em] backdrop-opacity-60">Card 3x3</h2>
+    <p class="text-xs font-semibold backdrop-opacity-60">Fila 3. Columna 3</p>
+  </article>
+  </div>
+</article>
+
+<!--
+Se creará columnas invertidas. Es decir que va de abajo hacia arriba.
+-->
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+  <h2 class="mb-1 text-xl font-semibold text-slate-900">Cards de columna invertida: Sin gradiante y con sombra</h2>
+  <p class="mb-5 text-sm text-slate-500">Usando flex-col-reverse posicionaremos cards verticales en dirección opuesta</p>
+
+  <!--
+  flex: Ordenar elementos en una dimensión.
+  flex-col-reverse: Los elementos se generarán verticalmente, de abajo hacia arriba.
+  gap-3: El espacio entre elementos.
+  -->
+
+  <div class="flex flex-col-reverse gap-3">
+
+    <article class="rounded-4xl bg-white border-4 border-blue-800 p-5 shadow-2xl">
+      <h2 class="mt-2 text-lg font-bold text-blue-950 text-center">
+        Card 01
+      </h2>
+      <p class="mt-2 text-sm leading-6 text-slate-600 text-center">Derecho: Primer Card. Abajo hacia arriba</p>
+    </article>
+
+    <article class="rounded-4xl bg-white border-4 border-blue-800 p-5 shadow-2xl">
+      <h2 class="mt-2 text-lg font-bold text-blue-950 text-center">
+        Card 02
+      </h2>
+      <p class="mt-2 text-sm leading-6 text-slate-600 text-center">Segundo Card Abajo hacia arriba</p>
+    </article>
+
+    <article class="rounded-4xl bg-white border-4 border-blue-800 p-5 shadow-2xl">
+      <h2 class="mt-2 text-lg font-bold text-blue-950 text-center">
+        Card 03
+      </h2>
+      <p class="mt-2 text-sm leading-6 text-slate-600 text-center">Tercer Card Abajo hacia arriba</p>
+    </article>
+
+    <article class="rounded-4xl bg-white border-4 border-blue-800 p-5 shadow-2xl">
+      <h2 class="mt-2 text-lg font-bold text-blue-950 text-center">
+        Card 04
+      </h2>
+      <p class="mt-2 text-sm leading-6 text-slate-600 text-center">Cuarto Card Abajo hacia arriba</p>
+    </article>
+
+    <article class="rounded-4xl bg-white border-4 border-blue-800 p-5 shadow-2xl">
+      <h2 class="mt-2 text-lg font-bold text-blue-950 text-center">
+        Card 05
+      </h2>
+      <p class="mt-2 text-sm leading-6 text-slate-600 text-center">Quinto Card Abajo hacia arriba</p>
+    </article>
+
+  </div>
+
+</article>
+
+
+<!--
+Se crearán filas invertidas. Es decir que van desde la derecha hacia la izquierda. Similar a las columnas invertidas
+-->
+<article class="rounded-3xl border border-slate-200 bg-white shadow-sm p-5">
+  <h2 class="mb-1 text-xl font-semibold text-slate-900">Cards de fila invertida: Con gradiante y sin sombra</h2>
+  <p class="mb-5 text-sm text-slate-500">Usando flex-row-reverse posicionaremos cards horizontales en dirección opuesta.</p>
+
+  <!--
+  flex: Ordenar los elementos en 1 dimensión
+  flex-row-reverse: Los elementos se generan horizontalmente, de derecha a izquierda.
+  -->
+
+  <div class="flex flex-row-reverse gap-5">
+
+    <article class="rounded-2xl bg-linear-to-tr from-blue-500 to-red-500 text-white p-5">
+      <h2 class="mt-2 text-2xl font-bold">Card 01</h2>
+    <p class="text-xs font-semibold backdrop-opacity-60">Primero 123456789</p>
+
+    </article>
+
+    <article class="rounded-2xl bg-linear-to-tr from-black to-white text-white p-5">
+      <h2 class="mt-2 text-2xl font-bold">Card 02</h2>
+    <p class="text-xs font-semibold backdrop-opacity-60">Segundo 123456789</p>
+
+    </article>
+
+
+    <article class="rounded-2xl bg-linear-to-tr from-green-500 to-yellow-500 text-white p-5">
+      <h2 class="mt-2 text-2xl font-bold">Card 03</h2>
+    <p class="text-xs font-semibold backdrop-opacity-60">Tercero 123456789</p>
+
+    </article>
+    
+  </div>
+  
+
+</article>
+
+
+
+<!--
+Se crea un grid con la intención de implementar subgrids
+-->
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+  <h2 class="mb-1 text-xl font-semibold text-slate-900">Cards en subgrid: Con gradiante y con sombra</h2>
+  <p class="mb-5 text-sm text-slate-500">Usando flex-row-reverse posicionaremos cards horizontales en dirección opuesta.</p>
+
+
+  <!-- 
+  grid: Activa el grid
+  grid-flow-col: de arriba hacia abajo, luego de llegar al límite. Crea otra columna
+  grid-rows-4: El límite de filas es de 4
+  gap: Espacio entre elemntos
+  -->
+  <div class="grid grid-flow-col grid-rows-4 gap-4">
+
+    
+    <article class="rounded-2xl bg-linear-to-tr from-blue-200 to-red-200 p-5 shadow-xl">
+      <h2 class="text-center font-bold text-blue-950">
+        Card 01
+      </h2>
+      <p class="mb-5 text-sm text-slate-500 text-center">Card de la fila principal</p>
+    </article>
+
+    
+    <article class="rounded-2xl bg-linear-to-tr from-blue-200 to-red-200 p-5 shadow-xl">
+      <h2 class="text-center font-bold text-blue-950">
+        Card 02
+      </h2>
+      <p class="mb-5 text-sm text-slate-500 text-center">Card de la fila principal</p>
+    </article>
+
+    <!-- 
+    row-span-4: Ocupa 4 filas del Grid principal. 
+    grid: Crea otro grid
+    grid-rows-subgrid: Usa las mismas filas del grid padre. 
+    rounded-3xl: Hace las cards más redondas
+    bg-linear-to-br: hace las cards gradiantes
+    from-sky-300: Desde el color celeste
+    to-blue-700: hasta el color azul
+    shadow-2xl: sombra muy grande
+    -->
+    <article class="row-span-4 grid grid-rows-subgrid rounded-3xl bg-linear-to-br from-sky-300 to-blue-700 p-5 shadow-2xl">
+
+      
+      <div class="row-start-2 flex items-center justify-center">
+
+        <h2 class="text-xl font-bold text-white">
+          Subgrid Card 01
+        </h2>
+
+      </div>
+
+    </article>
+
+
+    <article class="rounded-2xl bg-linear-to-tr from-red-200 to-blue-200 p-5 shadow-xl">
+      <h2 class="text-center font-bold text-red-950">
+        Card 04
+      </h2>
+      <p class="mb-5 text-sm text-slate-500 text-center">Card de la fila principal</p>
+    </article>
+
+
+    <article class="rounded-2xl bg-linear-to-tr from-red-200 to-blue-200 p-5 shadow-xl">
+      <h2 class="text-center font-bold text-red-950">
+        Card 05
+      </h2>
+      <p class="mb-5 text-sm text-slate-500 text-center">Card de la fila principal</p>
+    </article>
+
+  </div>
+</article>
+
+
+</section>

@@ -1,16 +1,26 @@
-<header class="header">
-    <h1>
-        {{brand()}}
-    </h1>
+<header class="app-header">
+<span class="tittle">{{brand() | uppercase}}</span>
+<!---NAVBAR--->
+<nav class="app-header_nav">
+    <a class="nav-link"
+     routerLink="/"
+      routerLinkActive="nav-link--active"
+       [routerLinkActiveOptions]="{exact:true}">
+       HOME
+    </a>
 
-        <button (click)="changeBrand()">Modificar Título</button>
-        <button (click)="resetBrand()" [disabled]="brand() === 'PPW ANGULAR'">Resetear Título</button>
-        <button (click)="toggleInfo()">
-            {{toggleLabel()}}
-        </button>
 
+    <a class="nav-link" 
+    routerLink="/students" 
+    routerLinkActive="nav-link--active">
+    Estudiantes
+    </a>
 
-    @if(showInfo()){
-        <h3>Show info es TRUE por eso muestra </h3>
-    }
+    <a class="nav-link"
+    routerLink="/layouts"
+    routerLinkActive="nav-link--active">
+    Layouts
+    </a>
+</nav>
+
 </header>

@@ -1,59 +1,18 @@
-# PpwAngular
+# 04-estilos-layout-tailwind-práctica
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
+![cuadrículas](assets/04-Cuadricula.png)
 
-## Development server
+Cuadrículas: Se hace una cuadrícula de cards, con un total de 9 cards. Al ingresar los cards, se hacen de arriba hacia abajo,
+con un máximo de tres, después del ingresar el cuarto, automáticamente se crea en el lado derecho de las cards creadas,
+nuevamente de arriba hacia abajo
 
-To start a local development server, run:
 
-```bash
-ng serve
-```
+![columnas invertidas](assets/04-fila-invertida.png)
+Filas invertidas: En este caso usamos flex-col-reverse. A medida que insertemos cards, estos se ordenarán de abajo hacia arriba. Se hizo sin gradiante, pero con bordes y sombras grandes
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+![Filas invertidas](assets/04-columnas-invertidas.png)
+Columnas invertidas: Es similar al anterior, en este caso, cuando ingresemos cards se hará de derecha hacia la izquierda. Se uso un gradiante usando distintos colores, además de una sombra moderada
 
-## Code scaffolding
+![subgrid](assets/04-subgrid.png)
+Subgrid: En este caso usamos una cuadrícula, usando grid. Pero implementamos un subgrid que ocupa 4 filas. Usamos grid-rows-subgrid, que, Usa las mismas filas del grid padre. 
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
