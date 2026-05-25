@@ -37,11 +37,11 @@
                 <td>
                     <div class="flex items-center gap-4 py-2">
                         <div class="avatar">
-<a [routerLink]="['/simpsons', char.id]" class="avatar">
-  <div class="w-14 h-14 rounded-xl bg-base-200 ring ring-base-300 ring-offset-base-100 ring-offset-2">
-    <img [src]="'https://cdn.thesimpsonsapi.com/500'+char.portrait_path" [alt]="char.name" class="object-cover" />
-  </div>
-</a>
+                            <a [routerLink]="['/simpsons', char.id]" class="avatar">
+                                <div class="w-14 h-14 rounded-xl bg-base-200 ring ring-base-300 ring-offset-base-100 ring-offset-2">
+                                    <img [src]="'https://cdn.thesimpsonsapi.com/500'+char.portrait_path" [alt]="char.name" class="object-cover" />
+                                </div>
+                            </a>
                         </div>
 
                         <div class="min-w-0">
@@ -76,7 +76,54 @@
             }
         </tbody>
     </table>
+    
+
+
+
+
+
+
+
+
+
+
 </div>
+
+
+
+
+
+      <!-- Controles de paginación -->
+  <div class="flex items-center justify-between gap-4 mb-6">
+    <span class="text-sm text-base-content/60">
+      Página {{ paginationService.currentPage() }}
+      de {{ simpsonsResource.value()!.pages }}
+    </span>
+    <div class="join">
+      <a
+        class="join-item btn btn-sm"
+        [class.btn-disabled]="paginationService.currentPage() <= 1"
+        [routerLink]="[]"
+        [queryParams]="{ page: paginationService.currentPage() - 1 }">
+        «
+      </a>
+      <button class="join-item btn btn-sm btn-active">
+        {{ paginationService.currentPage() }}
+      </button>
+      <a
+        class="join-item btn btn-sm"
+        [class.btn-disabled]="paginationService.currentPage() >= simpsonsResource.value()!.pages"
+        [routerLink]="[]"
+        [queryParams]="{ page: paginationService.currentPage() + 1 }">
+        »
+      </a>
+    </div>
+  </div>
+
+
+
 }
+
+
 
 
