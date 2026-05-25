@@ -1,21 +1,37 @@
-<section class="hero">
-  <h2>{{ title() | uppercase }}</h2>
-  <p>{{ subtitle() }}</p>
-
-  <button type="button" (click)="toggleMode()">Vista: {{ viewMode() }}</button>
-
-  @switch (viewMode()) {
-    @case ('lista') {
-      <ul>
-        @for (item of topics(); track item) {
-          <li>{{ item }}</li>
-        } @empty {
-          <p>No hay temas registrados.</p>
-        }
-      </ul>
-    }
-    @case ('resumen') {
-      <p>Total de temas: <strong>{{ topics().length }}</strong></p>
-    }
-  }
+<section class="relative min-h-[90vh] flex items-center pt-20 px-6 md:px-margin-desktop overflow-hidden">
+<div class="max-w-[1280px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10 space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass border border-primary/20">
+<span class="w-2 h-2 rounded-full bg-accent-purple animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-primary">Available for freelance</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">
+                    Julian <span class="text-accent-purple">Ramirez</span>
+</h1>
+<p class="font-headline-sm text-headline-sm text-on-surface-variant max-w-xl">
+                    Desarrollador Web Full Stack transformando ideas complejas en experiencias digitales de alto rendimiento.
+                </p>
+<p class="font-body-lg text-body-lg text-tertiary max-w-lg">
+                    Especializado en arquitecturas escalables y diseño centrado en el usuario, fusionando precisión técnica con estética moderna.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="px-8 py-4 rounded-xl bg-accent-purple text-white font-label-caps text-label-caps hover:bg-accent-purple/90 transition-all duration-300 shadow-lg shadow-accent-purple/20" href="#contact">
+                        Contactar
+                    </a>
+<a class="px-8 py-4 rounded-xl border border-outline/30 font-label-caps text-label-caps hover:bg-white/5 transition-all duration-300" href="#">
+                        Descargar CV
+                    </a>
+</div>
+</div>
+<div class="relative flex justify-center lg:justify-end">
+<div class="relative w-72 h-72 md:w-[480px] md:h-[480px]">
+  <!-- Decorative elements -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-accent-purple/20 blur-[100px]"></div>
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary-container/20 blur-[100px]"></div>
+<div class="relative w-full h-full rounded-3xl overflow-hidden glass border border-white/10 p-2 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+<img alt="Julian Ramirez Portrait" class="w-full h-full object-cover rounded-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMPEVY4ilVUa6PAC8fOC38r-XRO5E8hJJm_vRYf-GWMYVL2APX-_EjA5r0Y8n5Ssyjucjk66RmWCCEegQSTbXYZ9TaQ2p77DIWlNxY5eUpRVOyepzNpTvSVkn1xuAqCZfsgSPGhBIonZdia_IT9KUBtippUr_GStEAYMeT6m8pLwD0WkR8kqAZqMAStctSFD_DLHgDzNgxItGvDvTiCGED0b4turmSkAdaYeTNrhUjE54imMTSMBffAwb3AYJcFHRVRn7pG-gR2hZj"/>
+</div>
+</div>
+</div>
+</div>
 </section>
