@@ -79,7 +79,7 @@
 
       <ul class="p-2 bg-base-100 rounded-box shadow">
         <li>
-          <a routerLink="/forms" routerLinkActive="menu-active">
+          <a routerLink="/signup" routerLinkActive="menu-active">
             Signup
           </a>
         </li>
@@ -105,7 +105,13 @@
   </a>
 </li>
 
-<li><a routerLink="/simpsons" routerLinkActive="active">Simpsons</a></li>
+
+<li>
+  @if(authService1.role()==='admin'){
+  <a routerLink="/simpsons" routerLinkActive="active">Simpsons</a>
+}
+
+</li>
 
       </ul>
     </div>
@@ -171,7 +177,7 @@
 
     <ul>
       <li>
-        <a routerLink="/forms" routerLinkActive="menu-active">
+        <a routerLink="/signup" routerLinkActive="menu-active">
           Signup
         </a>
       </li>
